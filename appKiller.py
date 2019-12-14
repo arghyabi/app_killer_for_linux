@@ -52,6 +52,10 @@ def kill_app(pId):
 	return val
 
 
+def tutorial():
+	print("\n\nChange the appication name in the 'setting.json' file to kill your own program\n")
+
+
 def statement(res):
 	if res == 0:
 		print("App Name:", app)
@@ -59,17 +63,15 @@ def statement(res):
 		print("Program killed Successfully")
 	elif res == -1:
 		print(app, "is not currently running")
+		tutorial()
 	else:
 		print("Someting error happed")
+		tutorial()
 
 
 def clean():
 	if os.path.exists("temp.txt"):
 		os.remove("temp.txt")
-
-
-def tutorial():
-	print("\n\nChange the appication name in the 'setting.json' file to kill your own program\n")
 
 
 if __name__ == "__main__":
@@ -82,6 +84,3 @@ if __name__ == "__main__":
 
 	statement(res)
 	clean()
-
-	tutorial()
-
